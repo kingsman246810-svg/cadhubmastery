@@ -314,12 +314,39 @@ Students learn AutoCAD, SketchUp, PVsyst and solar project design used in real i
 
 <form id="contactForm">
 
-<input type="text" name="name" placeholder="Full Name" required>
+<label>Full Name <span style="color:red">*</span></label>
+<input type="text" name="name" placeholder="Enter Full Name" required>
 
-<input type="email" name="email" placeholder="Email Address" required>
+<label>Email Address <span style="color:red">*</span></label>
+<input type="email" name="email" placeholder="Enter Email Address" required>
 
-<input type="tel" name="phone" placeholder="Phone Number" required>
+<label>Mobile Number <span style="color:red">*</span></label>
 
+<div style="display:flex; gap:10px;">
+
+<select name="countrycode" required style="width:120px;">
+
+<option value="+91">+91</option>
+<option value="+92">+92</option>
+<option value="+1">+1</option>
+<option value="+44">+44</option>
+<option value="+61">+61</option>
+<option value="+971">+971</option>
+
+</select>
+
+<input 
+type="tel"
+name="phone"
+placeholder="10 Digit Mobile Number"
+pattern="[0-9]{10}"
+maxlength="10"
+required
+title="Please enter a valid 10 digit number">
+
+</div>
+
+<label>Select Course</label>
 <select name="course" required>
 
 <option value="">Select Course</option>
@@ -330,7 +357,8 @@ Students learn AutoCAD, SketchUp, PVsyst and solar project design used in real i
 
 </select>
 
-<textarea name="message" placeholder="Message"></textarea>
+<label>Message</label>
+<textarea name="message" placeholder="Write your message"></textarea>
 
 <button class="btn" type="submit">Submit Application</button>
 
