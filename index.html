@@ -51,11 +51,6 @@ color:white;
 
 .logo img{
 height:55px;
-width:auto;
-}
-
-.logo h1{
-font-size:22px;
 }
 
 nav a{
@@ -69,7 +64,7 @@ nav a:hover{
 color:#ffcc00;
 }
 
-/* HERO SECTION */
+/* HERO */
 
 .hero{
 background:linear-gradient(135deg,#1f6feb,#0b3d91);
@@ -98,6 +93,8 @@ border-radius:6px;
 text-decoration:none;
 margin-top:20px;
 font-weight:bold;
+border:none;
+cursor:pointer;
 }
 
 /* CONTAINER */
@@ -128,16 +125,22 @@ border-radius:10px;
 padding:25px;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
 text-align:center;
-transition:0.3s;
 }
 
-.course:hover{
-transform:translateY(-5px);
+/* PROJECTS */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
 }
 
-.course h3{
-margin-top:10px;
-color:#0b3d91;
+.projects iframe{
+width:100%;
+height:220px;
+border-radius:10px;
+border:none;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
 }
 
 /* ABOUT */
@@ -168,7 +171,6 @@ margin-top:10px;
 margin-bottom:15px;
 border-radius:6px;
 border:1px solid #ccc;
-font-size:14px;
 }
 
 /* FOOTER */
@@ -181,11 +183,7 @@ padding:25px;
 margin-top:50px;
 }
 
-footer p{
-margin:6px 0;
-}
-
-/* WHATSAPP BUTTON */
+/* WHATSAPP */
 
 .whatsapp{
 position:fixed;
@@ -197,26 +195,22 @@ padding:12px 18px;
 border-radius:30px;
 text-decoration:none;
 font-weight:bold;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* MOBILE */
+/* POPUP */
 
-@media(max-width:700px){
-
-header{
-flex-direction:column;
-gap:10px;
-}
-
-.hero h2{
-font-size:32px;
-}
-
-nav a{
-margin:0 10px;
-}
-
+.popup{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+text-align:center;
+z-index:2000;
 }
 
 </style>
@@ -227,12 +221,13 @@ margin:0 10px;
 <header>
 
 <a href="#" class="logo">
-<img src="cad-hub-mastery-logo.png" alt="CAD Hub Mastery Logo">
+<img src="cad-hub-mastery-logo.png">
 <h1>CAD Hub Mastery</h1>
 </a>
 
 <nav>
 <a href="#courses">Courses</a>
+<a href="#projects">Projects</a>
 <a href="#about">About</a>
 <a href="#join">Join Coaching</a>
 </nav>
@@ -244,7 +239,7 @@ margin:0 10px;
 <h2>Master CAD & Solar Design Skills</h2>
 
 <p>
-Professional training in AutoCAD, SketchUp, PVSyst and Solar Design. 
+Professional training in AutoCAD, SketchUp, PVSyst and Solar Design.
 Learn real industry skills and start your engineering career.
 </p>
 
@@ -260,27 +255,41 @@ Learn real industry skills and start your engineering career.
 
 <div class="course">
 <h3>AutoCAD Training</h3>
-<p>Learn 2D & 3D AutoCAD from beginner to advanced with real project practice.</p>
-<a class="btn" href="#join">Enroll</a>
+<p>Learn 2D & 3D AutoCAD from beginner to advanced.</p>
 </div>
 
 <div class="course">
 <h3>SketchUp Course</h3>
-<p>Master professional 3D modeling for architecture and engineering design.</p>
-<a class="btn" href="#join">Enroll</a>
+<p>Master professional 3D modeling for architecture.</p>
 </div>
 
 <div class="course">
 <h3>PVSyst Training</h3>
-<p>Learn solar system simulation, energy calculation and solar project analysis.</p>
-<a class="btn" href="#join">Enroll</a>
+<p>Learn solar system simulation and energy calculation.</p>
 </div>
 
 <div class="course">
 <h3>Solar Design Course</h3>
-<p>Learn rooftop solar layout design, system sizing and project planning.</p>
-<a class="btn" href="#join">Enroll</a>
+<p>Learn rooftop solar layout and project planning.</p>
 </div>
+
+</div>
+
+</section>
+
+<section id="projects" class="container">
+
+<h2 class="section-title">Projects From Our YouTube Channel</h2>
+
+<div class="projects">
+
+<iframe src="https://www.youtube-nocookie.com/embed/fVmhxHgo94M" allowfullscreen></iframe>
+
+<iframe src="https://www.youtube-nocookie.com/embed/OTIU-nh2m8Q" allowfullscreen></iframe>
+
+<iframe src="https://www.youtube-nocookie.com/embed/-aI6Wr5BavU" allowfullscreen></iframe>
+
+<iframe src="https://www.youtube-nocookie.com/embed/7xy9SC80SYI" allowfullscreen></iframe>
 
 </div>
 
@@ -291,8 +300,8 @@ Learn real industry skills and start your engineering career.
 <h2 class="section-title">About CAD Hub Mastery</h2>
 
 <p class="about">
-CAD Hub Mastery is a professional online learning platform dedicated to teaching CAD design and solar engineering tools. 
-Our mission is to help students, engineers and professionals gain practical skills in AutoCAD, SketchUp, PVSyst and solar system design used in real industry projects.
+CAD Hub Mastery is a professional learning platform teaching CAD design and solar engineering tools.
+Students learn AutoCAD, SketchUp, PVsyst and solar project design used in real industry projects.
 </p>
 
 </section>
@@ -339,41 +348,58 @@ Our mission is to help students, engineers and professionals gain practical skil
 
 <p>Email: verman2040@gmail.com</p>
 
-<p>© 2026 CAD Hub Mastery. All Rights Reserved.</p>
+<p>© 2026 CAD Hub Mastery</p>
 
 </footer>
 
 <a href="https://wa.me/918700683043" class="whatsapp">WhatsApp</a>
+
+<div class="popup" id="thankPopup">
+<h3 id="thankText"></h3>
+<button onclick="closePopup()" class="btn">OK</button>
+</div>
+
+<audio id="clickSound">
+<source src="https://www.soundjay.com/buttons/sounds/button-09.mp3" type="audio/mpeg">
+</audio>
+
 <script>
 
-const scriptURL = "https://script.google.com/macros/s/AKfycbwTOoJTVoV8f3U_uZtttQIgS_-_E6R-vtCovsN3BgTPyyfOE7J17DoFUqyhfOFpQTh22g/exec";
+const scriptURL="https://script.google.com/macros/s/AKfycbwTOoJTVoV8f3U_uZtttQIgS_-_E6R-vtCovsN3BgTPyyfOE7J17DoFUqyhfOFpQTh22g/exec";
 
-const form = document.getElementById("contactForm");
+const form=document.getElementById("contactForm");
 
-form.addEventListener("submit", e => {
+form.addEventListener("submit",function(e){
 
 e.preventDefault();
 
-fetch(scriptURL, {
-method: "POST",
-body: new FormData(form)
-})
-.then(response => response.text())
-.then(data => {
+document.getElementById("clickSound").play();
 
-alert("Application Submitted Successfully!");
+let name=form.name.value;
+
+fetch(scriptURL,{
+method:"POST",
+body:new FormData(form)
+})
+.then(res=>res.text())
+.then(data=>{
+
+document.getElementById("thankPopup").style.display="block";
+
+document.getElementById("thankText").innerHTML=
+"✅ Thank you <b>"+name+"</b>!<br>We will reach out to you within 30 minutes.";
+
 form.reset();
 
-})
-.catch(error => {
-
-alert("Error submitting form");
-console.error(error);
-
 });
 
 });
+
+function closePopup(){
+document.getElementById("thankPopup").style.display="none";
+}
 
 </script>
+
 </body>
 </html>
